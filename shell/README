@@ -1,0 +1,94 @@
+    myshell - 一个简单的shell  
+      
+    概要  
+        myshell  
+      
+    版权  
+        myshell is Copyright (C) 2018 by WangTianyang.  
+    
+    介绍  
+        myshell 是一个简单的shell程序，通过它你可以用来实现简单的命令行操作，比如列出目录下面的文件，清屏等等。  
+      
+    用法  
+        在终端下输入myshell，即可打开程序。  
+          
+        后台运行：在终端下输入myshell时，紧接着输入一个&，即输入myshell&。  
+          
+    功能  
+        当进入myshell后，你可以通过输入相应命令实现以下功能：        
+      
+        cd [directory] —— 把当前默认目录改变为[directory]。不输入参数默认为当前目录。  
+        dir [directory] —— 列出目录[directory]的内容。不输入参数默认为当前目录。  
+        clr —— 清屏。  
+        environ —— 列出所有的环境变量。  
+        echo [comment] —— 在屏幕上显示[comment]并换行。  
+        help —— 显示本用户手册。  
+        quit —— 退出myshell。  
+      
+        还调用其他程序和系统命令。  
+      
+    说明  
+        输入输出重定向功能：  
+        在myshell中使用命令行如programname arg1 arg2 > outputfile 时，programname的输出将输出到outputfile里而不是显示屏幕上。如果outputfile已存在则覆盖已有文件，如果不存在则创建输出文件。  
+        在myshell中使用命令行如programname arg1 arg2 >> outputfile 时，programname的输出将追加到outputfile里而不是显示屏幕上。如果outputfile已存在则将输出添加到已有文件尾部，如果不存在则创建输出文件。  
+      
+    示例  
+        当前目录为/home/dc，在终端下输入myshell，显示如下：  
+      
+        [dc@localhost ~]$ myshell  
+        /home/dc  
+        ==>  
+      
+        说明已经进入程序。  
+        继续输入dir，显示如下：  
+          
+        /home/dc  
+        ==>dir  
+        A       Desktop    index.php      note.xml  Public     Untitled 1.docx  
+        Audiobooks  Documents  index.php.bak  Pictures  Templates  Videos  
+        blog.docx   Downloads  Music          Podcasts  test.txt  
+        /home/dc  
+        ==>        
+      
+        输入clr，显示如下：  
+          
+        /home/dc  
+        ==>  
+          
+        屏幕被清空。  
+        输入environ，显示如下（中间省略部分环境变量，用省略号代替）：  
+          
+        /home/dc  
+        ==>environ  
+        XDG_VTNR=1  
+        XDG_SESSION_ID=2  
+        HOSTNAME=localhost.localdomain  
+        IMSETTINGS_INTEGRATE_DESKTOP=yes  
+        GPG_AGENT_INFO=/tmp/keyring-sFt4mm/gpg:0:1  
+        TERM=xterm  
+        SHELL=/bin/bash  
+        ...  
+        XAUTHORITY=/var/run/gdm/auth-for-dc-mesabL/database  
+        _=/home/dc/Desktop/operating_system/project/myshell  
+        OLDPWD=/home/dc/Desktop/operating_system/project  
+        /home/dc  
+        ==>  
+      
+        输入dir /，显示如下：  
+          
+        /home/dc  
+        ==>dir /         
+        bin   dev  home  lost+found  mnt  proc  run   srv  tmp  var  
+        boot  etc  lib   media       opt  root  sbin  sys  usr  
+        /home/dc  
+        ==>  
+      
+        另外，myshell可以调用其他程序,例如输入gedit，将调用GUI的文本编辑器gedit，在终端中按下ctrl+C可以结束gedit进程。  
+          
+        在myshell中输入quit，退出myshell，返回终端，显示如下：  
+          
+        /home/dc  
+        ==>quit  
+        [dc@localhost ~]$     
+      
+        以上仅为部分示例，更多详细请参考“功能”。  
